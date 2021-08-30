@@ -92,11 +92,13 @@
                                 <a href="" class="header__navbar-item-link">
                                     <i class="header__navbar-icon far fa-question-circle"></i>Trợ giúp</a>
                             </li>
-                            <li id="header-register" onclick="showRegister()" class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng ký</li>
-                            <li id="header-login" onclick="showLogin()" class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+                            <li class="header__navbar-auth">
+                                <li id="header-register" onclick="showRegister()" class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng ký</li>
+                                <li id="header-login" onclick="showLogin()" class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+                            </li>
 
                             <li class="header__navbar-user header__navbar-item">
-                                <div class="user">
+                                <div class="user hide">
                                     <i class="far fa-user"></i>
                                     <span class="header__navbar-user-name">Dương Văn Quang</span>
                                 </div>
@@ -105,7 +107,7 @@
                                     <li><a href="">Tài Khoản Của Tôi</a></li>
                                     <li><a href="">Địa Chỉ của Tôi</a></li>
                                     <li><a href="">Dơn Mua</a></li>
-                                    <li><a class="header__navbar-user-menu-logout" href="">Đăng Xuất</a></li>
+                                    <li><a onclick="hide(user)" class="header__navbar-user-menu-logout" href="">Đăng Xuất</a></li>
 
                                 </ul>
                             </li>
@@ -899,7 +901,7 @@
         </div>
         <!-- Modal layout -->
         <div class="modal hide">
-            <div class="modal__overlay" onclick="hideModal()">
+            <div class="modal__overlay" onclick="hide(modal)">
 
             </div>
             <div class="modal__body">
@@ -936,7 +938,7 @@
                             
                         </div> 
                         <div class="auth-form__controls">
-                            <button onclick="hideModal()" class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                            <button onclick="hide(modal)" class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
                             <button class="btn btn--primary">ĐĂNG KÝ</button>
                         </div>
                         
@@ -985,7 +987,7 @@
                             </div>
                         </div> 
                         <div class="auth-form__controls">
-                            <button onclick="hideModal()" class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                            <button onclick="hide(modal)" class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
                             <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
                         </div>
                         

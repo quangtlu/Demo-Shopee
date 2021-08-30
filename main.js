@@ -4,6 +4,8 @@ const $$ = document.querySelectorAll.bind(document)
 const modal = $('.modal')
 const register = $('#register')
 const login = $('#login')
+const user = $('.user')
+const headerAuth = $('.header__navbar-auth')
 
 function show(elemnet){
     elemnet.classList.remove('hide')
@@ -21,7 +23,4 @@ showLogin = function(){
     show(modal)
     hide(register)
     show(login)
-}
-hideModal = function(){
-    hide(modal)
 }
