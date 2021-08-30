@@ -92,12 +92,14 @@
                                 <a href="" class="header__navbar-item-link">
                                     <i class="header__navbar-icon far fa-question-circle"></i>Trợ giúp</a>
                             </li>
-                            <!-- <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng ký</li>
-                            <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li> -->
-                            <li class="header__navbar-item header__navbar-user">
-                                <img class=header__navbar-user-img src="https://scontent.fhan3-2.fna.fbcdn.net/v/t1.6435-9/122892330_1329552040720205_5933102292458959141_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=u3emzSWg1d8AX8L-iuP&_nc_ht=scontent.fhan3-2.fna&oh=6d54650ba41e8d7ad057f41e021ee476&oe=61231979" alt="">
-                                <span class="header__navbar-user-name">Dương Văn Quang</span>
+                            <li id="header-register" onclick="showRegister()" class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng ký</li>
+                            <li id="header-login" onclick="showLogin()" class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
 
+                            <li class="header__navbar-user header__navbar-item">
+                                <div class="user">
+                                    <i class="far fa-user"></i>
+                                    <span class="header__navbar-user-name">Dương Văn Quang</span>
+                                </div>
                                 <ul class="header__navbar-user-menu">
                             
                                     <li><a href="">Tài Khoản Của Tôi</a></li>
@@ -896,28 +898,33 @@
             
         </div>
         <!-- Modal layout -->
-        <!-- <div class="modal">
-            <div class="modal__overlay">
+        <div class="modal hide">
+            <div class="modal__overlay" onclick="hideModal()">
 
             </div>
-            <div class="modal__body"> -->
+            <div class="modal__body">
                 <!-- register form -->
-                <!-- <div class="auth-form">
+                <div id="register" class="auth-form">
                     <div class="auth-form__container">
                         <div class="auth-form__header">
                             <h3 class="auth-form__heading"> Đăng ký </h3>
-                            <span class="auth-form__switch-btn">Đăng nhập</span>
+                            <span class="auth-form__switch-btn" onclick="showLogin()">Đăng nhập</span>
 
                         </div>
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                <input class="auth-form__input" type="text" placeholder="Email">
+                        <div id="form-1" class="auth-form__form">
+                            <div class="auth-form__group form-group">
+                                <input id="email1" class="auth-form__input" type="text" placeholder="Email">
+                                <span class="form-message"></span>
+
                             </div>
-                            <div class="auth-form__group">
-                                <input class="auth-form__input" type="password" placeholder="Mật khẩu">
+                            <div class="auth-form__group form-group">
+                                <input id="password1" class="auth-form__input" type="password" placeholder="Mật khẩu">
+                                <span class="form-message"></span>
+
                             </div>
-                            <div class="auth-form__group">
-                                <input class="auth-form__input" type="password" placeholder="Nhập lại mật khẩu">
+                            <div class="auth-form__group form-group">
+                                <input id="password_confirmation" class="auth-form__input" type="password" placeholder="Nhập lại mật khẩu">
+                                <span class="form-message"></span>
                             </div>
 
                         </div> 
@@ -929,54 +936,8 @@
                             
                         </div> 
                         <div class="auth-form__controls">
-                            <button class="btn btn--normal auth-form__controls-back ">TRỞ LẠI</button>
+                            <button onclick="hideModal()" class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
                             <button class="btn btn--primary">ĐĂNG KÝ</button>
-                        </div>
-                        
-                    </div>
-                    <div class="auth-form__socials">
-                        <a href="" class="btn btn--size-s btn--with-icon auth-form__socials--fb">
-                            <i class="auth-form__socials-icon fab fa-facebook-square"></i>
-                            <span class="auth-form__socials-conect">Kết nối với Facebok</span>  
-                        </a>
-                        <a href="" class="btn btn--size-s btn--with-icon auth-form__socials--gg">
-                            <i class="auth-form__socials-icon fab fa-google"></i>
-                            <span class="auth-form__socials-conect">Kết nối với Google</span>  
-
-                        </a>
-                    </div>
-
-                </div> -->
-                
-                <!-- Login form -->
-                <!-- <div class="auth-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__header">
-                            <h3 class="auth-form__heading"> Đăng nhập </h3>
-                            <span class="auth-form__switch-btn">Đăng ký</span>
-
-                        </div>
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                <input class="auth-form__input" type="text" placeholder="Email">
-                            </div>
-                            <div class="auth-form__group">
-                                <input class="auth-form__input" type="password" placeholder="Mật khẩu">
-                            </div>
-                            
-
-                        </div> 
-                        <div class="auth-form__aside">
-                            <div class="auth-form__help">
-                                <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
-                                <span class="auth-form__help-separate"></span>
-                                <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
-                            </div>
-                            
-                        </div> 
-                        <div class="auth-form__controls">
-                            <button class="btn btn--normal auth-form__controls-back ">TRỞ LẠI</button>
-                            <button class="btn btn--primary">ĐĂNG NHẬP</button>
                         </div>
                         
                     </div>
@@ -994,9 +955,88 @@
 
                 </div>
                 
-                
+                <!-- Login form -->
+                <div id="login" class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading"> Đăng nhập </h3>
+                            <span class="auth-form__switch-btn" onclick="showRegister()">Đăng ký</span>
 
-            </div> -->
-        <!-- </div> -->
+                        </div>
+                        <div id="form-2" class="auth-form__form">
+                            <div class="auth-form__group form-group">
+                                <input id="email2" class="auth-form__input" type="text" placeholder="Email">
+                                <span class="form-message"></span>
+
+                            </div>
+                            <div class="auth-form__group form-group">
+                                <input id="password2" class="auth-form__input" type="password" placeholder="Mật khẩu">
+                                <span class="form-message"></span>
+
+                            </div>
+                            
+
+                        </div> 
+                        <div class="auth-form__aside">
+                            <div class="auth-form__help">
+                                <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                                <span class="auth-form__help-separate"></span>
+                                <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                            </div>
+                        </div> 
+                        <div class="auth-form__controls">
+                            <button onclick="hideModal()" class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                            <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
+                        </div>
+                        
+                    </div>
+                    <div class="auth-form__socials">
+                        <a href="" class="btn btn--size-s btn--with-icon auth-form__socials--fb">
+                            <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                            <span class="auth-form__socials-conect">Kết nối với Facebok</span>  
+                        </a>
+                        <a href="" class="btn btn--size-s btn--with-icon auth-form__socials--gg">
+                            <i class="auth-form__socials-icon fab fa-google"></i>
+                            <span class="auth-form__socials-conect">Kết nối với Google</span>  
+
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="./main.js"></script>
+        <script src="./assets/Thư viện form đăng ký, đăng nhập/validator.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            // Mong muốn của chúng ta
+            Validator({
+                form: '#form-1',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                Validator.isEmail('#email1','Vui lòng nhập email'),
+                Validator.isRequired('#password1','Vui lòng nhập mật khẩu'),
+                Validator.minLength('#password1', 6),
+                Validator.isRequired('#password_confirmation','Vui lòng nhập lại mật khẩu'),
+                Validator.isConfirmed('#password_confirmation', function () {
+                    return document.querySelector('#form-1 #password').value;
+                }, 'Mật khẩu nhập lại không chính xác')
+                ],
+            });
+
+
+            Validator({
+                form: '#form-2',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                Validator.isEmail('#email2','Vui lòng nhập email'),
+                Validator.isRequired('#password2','Vui lòng nhập mật khẩu'),
+                Validator.minLength('#password2', 6),
+                ],
+            });
+            });
+        </script>
     </body>
 </html>
